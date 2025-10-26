@@ -138,6 +138,20 @@ export function Hero() {
             >
               powered by Jagu&apos;e&apos;r
             </Text>
+            <Text
+              size="xl"
+              className="text-[12rem] md:text-[16rem] font-semibold mt-4"
+              style={{
+                fontSize: 'clamp(1.25rem, 3vw, 4rem)',
+                background: 'linear-gradient(135deg, #F9A8D4 0%, #EC4899 50%, #DB2777 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                fontFamily: 'var(--font-patua-one), sans-serif'
+              }}
+            >
+              2026.02.19(Fri) @Online
+            </Text>
           </div>
         </motion.div>
 
@@ -150,39 +164,11 @@ export function Hero() {
         <Stack gap="xl">
           {/* Event Details */}
           <Group justify="center" gap="xl" className="">
-            <Paper
-              shadow="md"
-              radius="lg"
-              p="xl"
-              className="bg-white border border-gray-200 min-w-[200px]"
-            >
-              <Text size="sm" className="text-gray-600 mb-2 font-semibold">
-                📅 開催日時
-              </Text>
-              <Text size="xl" fw={700} className="text-gray-900">
-                2026年2月19日
-              </Text>
-            </Paper>
-
-            <Paper
-              shadow="md"
-              radius="lg"
-              p="xl"
-              className="bg-white border border-gray-200 min-w-[200px]"
-            >
-              <Text size="sm" className="text-gray-600 mb-2 font-semibold">
-                📍 参加方式
-              </Text>
-              <Text size="xl" fw={700} className="text-gray-900">
-                オンライン
-              </Text>
-            </Paper>
-
             {/* Countdown */}
             <Paper
               shadow="lg"
               radius="xl"
-              p="lg"
+              p="xl"
               className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white"
             >
               <Text size="lg" className="text-center mb-6 font-semibold opacity-90">
