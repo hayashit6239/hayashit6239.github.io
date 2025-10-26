@@ -33,7 +33,7 @@ export function Header() {
             className="text-xl font-bold text-blue-600 hover:bg-transparent"
             onClick={() => scrollToSection('hero')}
           >
-            GCTS 2025
+            GCTS 2026
           </Button>
 
           <Group gap="xs" className="hidden md:flex">
