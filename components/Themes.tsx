@@ -98,7 +98,7 @@ export function Themes() {
               <motion.div
                 key={theme.title}
                 className="group relative p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 hover:border-white/40 shadow-2xl overflow-hidden transition-colors duration-300"
-                variants={cardVariants}
+                // variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
