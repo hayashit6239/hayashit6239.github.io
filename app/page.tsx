@@ -5,6 +5,7 @@ import { CfP } from '@/components/CfP';
 import { CodeOfConduct } from '@/components/CodeOfConduct';
 import { Staff } from '@/components/Staff';
 import { Footer } from '@/components/Footer';
+import { Themes } from '@/components/Themes';
 
 export default function Home() {
   return (
@@ -13,9 +14,6 @@ export default function Home() {
       <main>
         <div id="hero">
           <Hero />
-        </div>
-        <div id="theme">
-          <FeatureGrid />
         </div>
         <div id="cfp">
           <CfP />
