@@ -182,7 +182,7 @@ export function Hero() {
                 fontFamily: 'var(--font-patua-one), sans-serif'
               }}
             >
-              2026.02.19(Fri) @Online
+              2026.02.19(Thu) @Online
             </Text>
           </div>
         </motion.div>

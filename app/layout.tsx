@@ -8,20 +8,20 @@ const inter = Inter({ subsets: ['latin'] });
 const patuaOne = Patua_One({ subsets: ['latin'], weight: '400', variable: '--font-patua-one' });
 
 export const metadata: Metadata = {
-  title: 'Google Cloud Technical Summit 2025 powered by Jagu\'é\'r',
-  description: '超技術特化のGoogle Cloudカンファレンス',
+  title: 'Google Cloud Technical Summit 2026 powered by Jagu\'é\'r',
+  description: '超 Google Cloud 特化のカンファレンス',
   openGraph: {
-    title: 'Google Cloud Technical Summit 2025 powered by Jagu\'é\'r',
-    description: '超技術特化のGoogle Cloudカンファレンス',
+    title: 'Google Cloud Technical Summit 2026 powered by Jagu\'é\'r',
+    description: '超 Google Cloud 特化のカンファレンス',
     url: 'https://hayashit6239.github.io',
-    siteName: 'Google Cloud Technical Summit 2025',
+    siteName: 'Google Cloud Technical Summit 2026',
     locale: 'ja_JP',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Google Cloud Technical Summit 2025 powered by Jagu\'é\'r',
-    description: '超技術特化のGoogle Cloudカンファレンス',
+    title: 'Google Cloud Technical Summit 2026 powered by Jagu\'é\'r',
+    description: '超 Google Cloud 特化のカンファレンス',
   },
 };
 
