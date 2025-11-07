@@ -340,7 +340,7 @@ export function Hero() {
           <motion.h3
             className="text-md text-center mb-8 text-white max-w-4xl mx-auto"
           >
-            Google Cloud Technical Summit 2026 は「Deep Dive into Google Cloud」「Wide Connect With Community」をテーマに初めて開催するオンラインカンファレンスです。
+            Google Cloud Technical Summit 2026 は「Deep Dive into Google Cloud」「Wide Connect With Community」をテーマに初めて開催する Google Cloud 特化のオンラインカンファレンスです。
             <br />
             <br />
             以下二つのテーマは、幅広いロールの IT エンジニアや CTO / EM / Tech Lead など Google Cloud の技術に関心のあるすべての方を対象にとしています。
