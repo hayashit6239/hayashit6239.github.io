@@ -15,16 +15,26 @@ interface TimeLeft {
 const themes = [
   {
     icon: IconRocket,
-    title: '超 Google Cloud 特化',
+    title: 'Deep Dive into Google Cloud',
     description:
-      'ガチガチのGoogle Cloud / GWSの触っているユーザーならではのテクニカルなセッションがきける',
+      <p className="text-xs sm:text-base font-bold  text-slate-200 leading-relaxed">
+        <strong className='text-blue-300 text-xl'>Google Cloud に関心の高い上記の対象の方</strong>に加えて、これから <strong className='text-blue-300 text-xl'>Google Cloud の技術力を高めていきたい方</strong>にも興味を持っていただける場とします。
+        <br />
+        <br />
+        半日をかけて Google Cloud に没頭して、<strong className='text-blue-300 text-xl'>ここでしか得られない知見</strong>を持ち帰っていただければと思います。
+      </p>,
     gradient: 'from-blue-500 to-purple-600',
   },
   {
     icon: IconUsersGroup,
-    title: 'コミュニティの出会い',
+    title: 'Wide Connect with Community',
     description:
-      'Google Cloudのユーザーコミュニティとのハブになることで、参加者がGoogle Cloudの色々なコミュニティに出会える',
+      <p className="text-xs sm:text-base font-bold  text-slate-200 leading-relaxed">
+        本カンファレンスを主催している Jagu’e’r（ジャガー）を含めて Google Cloud ユーザーコミュニティはいくつか存在しており、参加される方が<strong className='text-green-300 text-xl'>様々な Google Cloud ユーザーコミュニティを知る</strong>ことのできる場とします。
+        <br />
+        <br />
+        セッションを通して様々なユーザーコミュニティに知り、<strong className='text-green-300 text-xl'>今日で終わらず Google Cloud の学びや新たな仲間との出会いのきっかけ</strong>としていただければと思います。
+      </p>,
     gradient: 'from-yellow-400 to-green-500',
   },
 ];
@@ -272,7 +282,7 @@ export function Hero() {
           </Group>
         </Stack>
       </Container>
-      <Container>
+      <Container size="xl">
         {/* Aurora Background */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
           <motion.div
@@ -312,7 +322,7 @@ export function Hero() {
         {/* Content */}
         <div className="relative container mx-auto px-4 z-10">
           <motion.h2
-            className="text-5xl md:text-6xl font-bold text-center mb-16 text-white"
+            className="text-5xl md:text-6xl font-bold text-center mb-4 text-white"
             style={{
               fontFamily: 'var(--font-patua-one), sans-serif',
               background: 'linear-gradient(135deg, #F9A8D4 0%, #60A5FA 100%)',
@@ -327,8 +337,16 @@ export function Hero() {
           >
             Concept
           </motion.h2>
+          <motion.h3
+            className="text-md text-center mb-8 text-white max-w-4xl mx-auto"
+          >
+            Google Cloud Technical Summit 2026 は「Deep Dive into Google Cloud」「Wide Connect With Community」をテーマに初めて開催するオンラインカンファレンスです。
+            <br />
+            <br />
+            以下二つのテーマは、幅広いロールの IT エンジニアや CTO / EM / Tech Lead など Google Cloud の技術に関心のあるすべての方を対象にとしています。
+          </motion.h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {themes.map((theme, i) => {
               const Icon = theme.icon;
               return (
@@ -351,22 +369,24 @@ export function Hero() {
 
                   {/* Content */}
                   <div className="relative z-10">
-                    {/* Icon with hover effect */}
-                    <div className="inline-block p-4 bg-white/10 rounded-full mb-6 transition-transform duration-300 transform group-hover:-translate-y-1 group-hover:rotate-6">
-                      <Icon className="h-12 w-12 text-white" stroke={1.5} />
+                    {/* Icon and Title in a row */}
+                    <div className="flex items-center gap-4 max-w-sm mx-auto">
+                      <div className="p-4 bg-white/10 rounded-full transition-transform duration-300 transform group-hover:-translate-y-1 group-hover:rotate-6">
+                        <Icon className="h-12 w-12 text-white" stroke={1.5} />
+                      </div>
+                      <h3
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-white"
+                        style={{
+                          fontFamily: 'var(--font-patua-one), sans-serif',
+                        }}
+                      >
+                        {theme.title}
+                      </h3>
                     </div>
 
-                    <h3
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4"
-                      style={{
-                        fontFamily: 'var(--font-patua-one), sans-serif',
-                      }}
-                    >
-                      {theme.title}
-                    </h3>
-                    <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
-                      {theme.description}
-                    </p>
+                    {/* <p className="text-xs sm:text-base text-slate-200 leading-relaxed"> */}
+                    {theme.description}
+                    {/* </p> */}
                   </div>
                 </motion.div>
               );
