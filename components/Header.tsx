@@ -1,13 +1,30 @@
 'use client';
-import { Container, Group, Button } from '@mantine/core';
+import { Container, Group, Button, Menu } from '@mantine/core';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { IconDots } from '@tabler/icons-react';
 
 export function Header() {
+  const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint is 768px
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setMobileMenuOpened(false);
   };
 
   const navItems = [
@@ -35,25 +52,51 @@ export function Header() {
           >
             GCTS 2026
           </Button>
+          {
+            !isMobile && (
+              <Group gap="xs" className="hidden md:flex">
+                {navItems.map((item) => (
+                  <Button
+                    key={item.id}
+                    variant="subtle"
+                    className="text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                    onClick={() => scrollToSection(item.id)}
+                  >
+                    {item.label}
+                  </Button>
+                ))}
+              </Group>
+            )
+          }
 
-          <Group gap="xs" className="hidden md:flex">
-            {navItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="subtle"
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </Button>
-            ))}
-          </Group>
-
-          {/* Mobile Menu Button (future enhancement) */}
+          {/* Mobile Menu */}
           <div className="md:hidden">
-            <Button variant="subtle" className="text-gray-700">
-              ☰
-            </Button>
+            <Menu
+              opened={mobileMenuOpened}
+              onChange={setMobileMenuOpened}
+              position="bottom-end"
+              shadow="md"
+            >
+              <Menu.Target>
+                <Button
+                  variant="subtle"
+                  className="text-gray-700 hover:text-blue-600"
+                >
+                  <IconDots size={24} />
+                </Button>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                {navItems.map((item) => (
+                  <Menu.Item
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                  >
+                    {item.label}
+                  </Menu.Item>
+                ))}
+              </Menu.Dropdown>
+            </Menu>
           </div>
         </Group>
       </Container>
